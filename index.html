@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edubot | Master Your Studies with AI</title>
+    
+    <!-- Typography: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5', /* Indigo 600 */
+                        secondary: '#7C3AED', /* Violet 600 */
+                        dark: '#0F172A', /* Slate 900 */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-effect border-b border-white/20 transition-all">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white transition-transform group-hover:scale-105">
+                        <i class="fa-solid fa-graduation-cap text-sm"></i>
+                    </div>
+                    <span class="font-heading font-bold text-xl tracking-tight text-slate-900 group-hover:text-primary transition-colors">Edubot</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">How it Works</a>
+                    <a href="#reviews" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Reviews</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Pricing</a>
+                </div>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white transition-all bg-slate-900 rounded-full hover:bg-slate-800 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2">
+                        Download App
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-xl transition-all">
+            <div class="px-6 py-8 flex flex-col gap-6">
+                <a href="#features" class="text-lg font-medium text-slate-900">Features</a>
+                <a href="#how-it-works" class="text-lg font-medium text-slate-900">How it Works</a>
+                <a href="#reviews" class="text-lg font-medium text-slate-900">Reviews</a>
+                <a href="#pricing" class="text-lg font-medium text-slate-900">Pricing</a>
+                <hr class="border-slate-100">
+                <a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="w-full py-3 text-center text-white bg-slate-900 rounded-xl font-semibold shadow-lg">Download App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <!-- Ambient Background -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
+                <div class="absolute top-20 left-10 w-96 h-96 bg-indigo-100 rounded-full blur-[120px] opacity-60"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-violet-100 rounded-full blur-[120px] opacity-60"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Text Content -->
+                <div class="flex flex-col items-start fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm mb-8">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                        <span class="text-xs font-semibold text-slate-600 uppercase tracking-wide">AI-Powered Learning</span>
+                    </div>
+                    <h1 class="font-heading text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                        Master Your Studies with <span class="text-primary">Edubot AI</span>.
+                    </h1>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-8 max-w-lg">
+                        Snap a photo of any question or ask directly. Get instant, accurate answers and study smarter, not harder.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3.5 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition-all hover:-translate-y-1 shadow-xl shadow-slate-900/10">
+                            <i class="fa-brands fa-apple text-2xl"></i>
+                            <div class="flex flex-col items-start leading-none">
+                                <span class="text-[10px] font-medium opacity-80 uppercase">Download on the</span>
+                                <span class="text-lg font-bold">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Content (iPhone Mockup) -->
+                <div class="relative flex justify-center lg:justify-end fade-in-up delay-100">
+                    <div class="iphone-mockup glass-card">
+                        <div class="notch"></div>
+                        <div class="screen bg-slate-50 relative overflow-hidden flex flex-col">
+                            <!-- Fake App UI -->
+                            <div class="p-6 pt-12 flex-1 flex flex-col">
+                                <div class="flex justify-between items-center mb-8">
+                                    <i class="fa-solid fa-bars text-slate-400"></i>
+                                    <span class="font-heading font-bold text-slate-800">Edubot</span>
+                                    <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                                         <img src="https://ui-avatars.com/api/?name=Alex&background=random" alt="User">
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 mb-4">
+                                    <p class="text-slate-500 text-xs mb-2">Calculus II</p>
+                                    <p class="font-medium text-slate-800">What is the integral of x^2?</p>
+                                </div>
+
+                                <div class="mt-auto">
+                                    <div class="bg-indigo-50/50 p-4 rounded-2xl rounded-bl-none border border-indigo-100/50">
+                                        <p class="text-primary text-sm font-medium leading-relaxed">
+                                            The integral of x² with respect to x is (x³)/3 + C, where C is the constant of integration.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom Action Bar -->
+                            <div class="p-4 bg-white border-t border-slate-100 flex justify-center">
+                                <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center text-white shadow-lg shadow-slate-900/20 transform transition-transform hover:scale-110 cursor-pointer">
+                                    <i class="fa-solid fa-camera text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Elements -->
+                    <div class="absolute top-1/2 -right-4 lg:-right-12 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 animate-float">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Accuracy</p>
+                                <p class="font-bold text-slate-900">99.8%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything you need to excel</h2>
+                    <p class="text-slate-600 text-lg">Powerful features packed into one simple app designed for the modern student.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+                    <!-- Large Card -->
+                    <div class="md:col-span-2 rounded-3xl p-8 bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg group relative overflow-hidden fade-in">
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bolt text-2xl"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Instant Answers</h3>
+                            <p class="text-slate-600 max-w-sm">Get step-by-step solutions in seconds. Our AI analyzes your problem and explains the methodology, not just the result.</p>
+                        </div>
+                        <!-- Abstract Graphic -->
+                        <div class="absolute right-0 bottom-0 w-64 h-64 bg-gradient-to-tl from-blue-50 to-transparent rounded-tl-[100px]"></div>
+                    </div>
+
+                    <!-- Tall Card -->
+                    <div class="md:row-span-2 rounded-3xl p-8 bg-slate-900 text-white relative overflow-hidden hover:shadow-xl transition-all fade-in delay-75">
+                        <div class="relative z-10 h-full flex flex-col">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                                <i class="fa-solid fa-brain text-2xl text-violet-300"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold mb-2">Smart Study Plans</h3>
+                            <p class="text-slate-300 mb-8">AI tailored schedules that adapt to your learning pace and exams.</p>
+                            <div class="mt-auto w-full h-32 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                                    <span class="text-xs text-slate-300">Progress</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-2 mb-2">
+                                    <div class="bg-violet-400 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-transparent to-slate-800/50 pointer-events-none"></div>
+                    </div>
+
+                    <!-- Medium Card -->
+                    <div class="rounded-3xl p-8 bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg fade-in delay-100">
+                         <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
+                                <i class="fa-solid fa-camera text-2xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Photo Recognition</h3>
+                        <p class="text-slate-600 text-sm">Handwritten or printed, we read it all.</p>
+                    </div>
+
+                    <!-- Medium Card -->
+                    <div class="rounded-3xl p-8 bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg fade-in delay-150">
+                         <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+                                <i class="fa-solid fa-shapes text-2xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Multi-Subject</h3>
+                        <p class="text-slate-600 text-sm">Math, Science, History, and Literature.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16 fade-in">Simple as 1, 2, 3</h2>
+                
+                <div class="grid md:grid-cols-3 gap-12 relative">
+                    <!-- Connecting Line -->
+                    <div class="hidden md:block absolute top-24 left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-slate-200 via-primary/20 to-slate-200 -z-1"></div>
+
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center fade-in group">
+                        <div class="w-20 h-20 rounded-2xl bg-white shadow-xl shadow-slate-200/50 flex items-center justify-center mb-8 relative z-10 border border-slate-100 group-hover:-translate-y-2 transition-transform duration-300">
+                            <span class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold border-4 border-slate-50">1</span>
+                            <i class="fa-solid fa-download text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Download App</h3>
+                        <p class="text-slate-600">Get Edubot from the App Store or Play Store.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center fade-in delay-100 group">
+                        <div class="w-20 h-20 rounded-2xl bg-white shadow-xl shadow-slate-200/50 flex items-center justify-center mb-8 relative z-10 border border-slate-100 group-hover:-translate-y-2 transition-transform duration-300">
+                            <span class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold border-4 border-slate-50">2</span>
+                            <i class="fa-solid fa-camera-retro text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Snap or Ask</h3>
+                        <p class="text-slate-600">Take a photo of your homework or type a question.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center fade-in delay-200 group">
+                         <div class="w-20 h-20 rounded-2xl bg-white shadow-xl shadow-slate-200/50 flex items-center justify-center mb-8 relative z-10 border border-slate-100 group-hover:-translate-y-2 transition-transform duration-300">
+                            <span class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold border-4 border-slate-50">3</span>
+                            <i class="fa-solid fa-lightbulb text-2xl text-amber-500"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Learn Instantly</h3>
+                        <p class="text-slate-600">Get detailed explanations and master the topic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section id="reviews" class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-8 fade-in">Trusted by Students</h2>
+                
+                <div class="p-8 md:p-12 rounded-3xl bg-slate-50 border border-slate-100 relative fade-in">
+                    <div class="flex justify-center gap-1 text-amber-400 mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed mb-8">
+                        "Edubot completely changed how I study for Calculus. The step-by-step breakdowns are a lifesaver. It's like having a tutor in my pocket 24/7."
+                    </blockquote>
+                    <div class="flex items-center justify-center gap-4">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+J&background=0F172A&color=fff" alt="Student" class="w-12 h-12 rounded-full">
+                        <div class="text-left">
+                            <p class="font-bold text-slate-900">Sarah Jenkins</p>
+                            <p class="text-sm text-slate-500">University Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">Simple, Transparent Pricing</h2>
+                    <p class="text-slate-600 text-lg">Unlock full access to expert AI tutoring.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                    <!-- Card 1: Basic -->
+                    <div class="pricing-card fade-in delay-75">
+                        <div class="pricing-header">
+                            <h2 class="font-heading text-xl font-bold text-slate-900">Basic</h2>
+                            <p class="pricing-price">Free <span class="pricing-period text-sm font-normal">/ forever</span></p>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-6">Get started with essential homework help.</p>
+                        
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> 5 AI queries per day</li>
+                            <li><i class="fa-solid fa-check"></i> Standard response speed</li>
+                            <li><i class="fa-solid fa-check"></i> Basic math solver</li>
+                        </ul>
+
+                        <a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="btn-pricing btn-pricing-outline">Download</a>
+                    </div>
+
+                    <!-- Card 2: Monthly (Pro Features) -->
+                    <div class="pricing-card fade-in delay-100">
+                         <div class="pricing-header">
+                            <h2 class="font-heading text-xl font-bold text-slate-900">Monthly Plan</h2>
+                            <p class="pricing-price">$2.99 <span class="pricing-period">/ month</span></p>
+                         </div>
+                        <p class="text-sm text-slate-500 mb-6">Unlock Pro features with flexibility.</p>
+                        
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> Unlimited AI Scan & Solve</li>
+                            <li><i class="fa-solid fa-check"></i> Step-by-step explanations</li>
+                            <li><i class="fa-solid fa-check"></i> No Ads</li>
+                        </ul>
+
+                        <a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="btn-pricing btn-pricing-outline">Select Monthly</a>
+                    </div>
+
+                    <!-- Card 3: Yearly (Pro Features - Best Value) -->
+                    <div class="pricing-card popular fade-in delay-150">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                             <span class="badge-best-value">BEST VALUE</span>
+                        </div>
+                        
+                        <div class="pricing-header">
+                            <h2 class="font-heading text-xl font-bold text-primary">Yearly Plan</h2>
+                            <p class="pricing-price text-primary">$14.99 <span class="pricing-period">/ year</span></p>
+                        </div>
+
+                        <p class="text-sm text-slate-500 mb-6">Maximum savings for the whole year.</p>
+                        
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check text-primary"></i> <strong>Everything in Monthly</strong></li>
+                            <li><i class="fa-solid fa-check text-primary"></i> Priority AI Processing</li>
+                            <li><i class="fa-solid fa-check text-primary"></i> Save over 58% vs Monthly</li>
+                        </ul>
+
+                        <a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="btn-pricing btn-pricing-primary shadow-lg shadow-indigo-500/30">Continue with $14.99</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-white border border-slate-700">
+                            <i class="fa-solid fa-graduation-cap text-sm"></i>
+                        </div>
+                        <span class="font-heading font-bold text-2xl text-white">Edubot</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm">
+                        Empowering students worldwide with AI-driven learning tools. Study smarter, achieve more.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-white mb-6">Product</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="https://apps.apple.com/us/app/edubot-study-with-ai/id6754815317" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Download</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-white mb-6">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="pages/contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="pages/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="pages/terms.html" class="hover:text-white transition-colors">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2024 Edubot AI. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
