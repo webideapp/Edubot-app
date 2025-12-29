@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Edubot AI</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED',
+                        dark: '#0F172A',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white transition-transform group-hover:scale-105">
+                    <i class="fa-solid fa-graduation-cap text-sm"></i>
+                </div>
+                <span class="font-heading font-bold text-xl tracking-tight text-slate-900 group-hover:text-primary transition-colors">Edubot</span>
+            </a>
+             <div class="hidden md:flex items-center gap-8">
+                <a href="../index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Back to Home</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 shadow-xl">
+             <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="../index.html" class="text-lg font-medium text-slate-900">Home</a>
+                <a href="privacy.html" class="text-lg font-medium text-slate-900">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Split Layout -->
+    <main class="flex-grow pt-20">
+        <div class="h-full min-h-[calc(100vh-80px)] grid lg:grid-cols-2">
+            <!-- Left Side: Info -->
+            <div class="bg-slate-900 text-white p-12 lg:p-20 flex flex-col justify-center relative overflow-hidden">
+                 <!-- Background Decor -->
+                 <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+                 <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+                 
+                 <div class="relative z-10">
+                     <span class="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold mb-6 tracking-wide">SUPPORT & INQUIRIES</span>
+                     <h1 class="font-heading text-4xl lg:text-5xl font-bold mb-6">Let's start a conversation.</h1>
+                     <p class="text-slate-300 text-lg mb-12 max-w-md">Whether you need help with the app, have feedback on our AI, or just want to say hello, we're here to help.</p>
+
+                     <div class="space-y-6">
+                         <div class="flex items-center gap-4">
+                             <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                 <i class="fa-regular fa-envelope text-xl"></i>
+                             </div>
+                             <div>
+                                 <p class="text-sm text-slate-400">Email us</p>
+                                 <p class="font-medium">chuyongglean@gmail.com</p>
+                             </div>
+                         </div>
+                         <div class="flex items-center gap-4">
+                             <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                 <i class="fa-solid fa-location-dot text-xl"></i>
+                             </div>
+                             <div>
+                                 <p class="text-sm text-slate-400">Headquarters</p>
+                                 <p class="font-medium">Silicon Valley, CA</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="bg-white p-8 lg:p-20 flex flex-col justify-center">
+                <div class="max-w-lg mx-auto w-full">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-8">Send us a message</h2>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="contact-label">Full Name</label>
+                            <input type="text" id="name" class="contact-input" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="contact-label">Email Address</label>
+                            <input type="email" id="email" class="contact-input" placeholder="john@example.com" required>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="contact-label">Subject</label>
+                            <input type="text" id="subject" class="contact-input" placeholder="How can we help?" required>
+                        </div>
+
+                        <div>
+                            <label for="message" class="contact-label">Message</label>
+                            <textarea id="message" rows="4" class="contact-input resize-none" placeholder="Tell us about your inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-primary hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/20 transition-all hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
