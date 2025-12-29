@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | Edubot AI</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED',
+                        dark: '#0F172A',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white transition-transform group-hover:scale-105">
+                    <i class="fa-solid fa-graduation-cap text-sm"></i>
+                </div>
+                <span class="font-heading font-bold text-xl tracking-tight text-slate-900 group-hover:text-primary transition-colors">Edubot</span>
+            </a>
+             <div class="hidden md:flex items-center gap-8">
+                <a href="../index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Back to Home</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 shadow-xl">
+             <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="../index.html" class="text-lg font-medium text-slate-900">Home</a>
+                <a href="contact.html" class="text-lg font-medium text-slate-900">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-40 pb-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">Terms of Use</h1>
+            <p class="text-lg text-slate-500">Last updated: October 24, 2024</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid lg:grid-cols-4 gap-12">
+            <!-- Sidebar -->
+            <div class="hidden lg:block lg:col-span-1">
+                <div class="legal-nav">
+                    <a href="#" class="legal-nav-link active">1. Acceptance</a>
+                    <a href="#" class="legal-nav-link">2. Use of Service</a>
+                    <a href="#" class="legal-nav-link">3. Subscriptions</a>
+                    <a href="#" class="legal-nav-link">4. Liability</a>
+                </div>
+            </div>
+
+            <!-- Legal Text -->
+            <div class="lg:col-span-3 legal-content">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using Edubot AI ("Service"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+
+                <h2>2. Use of Service</h2>
+                <p>You are granted a non-exclusive, non-transferable, revocable license to access and use the Service strictly in accordance with these terms of use. As a condition of your use of the Site, you warrant to Edubot AI that you will not use the Site for any purpose that is unlawful or prohibited by these Terms.</p>
+
+                <h2>3. Subscriptions and Payments</h2>
+                <p>Some parts of the Service are billed on a subscription basis ("Subscription(s)"). You will be billed in advance on a recurring and periodic basis (such as daily, weekly, monthly or annually). Billing cycles are set either on a monthly or annual basis, depending on the type of subscription plan you select when purchasing a Subscription.</p>
+
+                <h2>4. Limitation of Liability</h2>
+                <p>In no event shall Edubot AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p>&copy; 2024 Edubot AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
