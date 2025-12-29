@@ -1,0 +1,348 @@
+:root {
+    --primary: #4F46E5;
+    --secondary: #7C3AED;
+    --dark: #0F172A;
+    --light: #F8FAFC;
+    --slate-200: #E2E8F0;
+    --slate-300: #CBD5E1;
+    --border-color: rgba(0, 0, 0, 0.05);
+    --success: #10B981;
+}
+
+/* Base Setup */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Utility: Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+/* Component: iPhone Mockup */
+.iphone-mockup {
+    width: 300px;
+    height: 600px;
+    border-radius: 40px;
+    border: 8px solid #fff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.02);
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.iphone-mockup .notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 30px;
+    background: #0F172A;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 20;
+}
+
+.iphone-mockup .screen {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Reveal Animations */
+.fade-in, .fade-in-up, .pricing-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible, .fade-in-up.visible, .pricing-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-75 { transition-delay: 75ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+
+/* =========================================
+   PRICING SECTION STYLES
+   ========================================= */
+#pricing {
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.06);
+    border-color: #94a3b8;
+}
+
+/* Popular Card Highlight (Yearly) */
+.pricing-card.popular {
+    border: 2px solid var(--primary);
+    box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.15);
+    z-index: 10;
+    transform: scale(1.02);
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 30px 60px -12px rgba(79, 70, 229, 0.25);
+}
+
+@media (max-width: 768px) {
+    .pricing-card.popular {
+        transform: scale(1);
+    }
+    .pricing-card.popular:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* Badges */
+.badge-best-value {
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    border: 2px solid white;
+}
+
+/* Typography in Cards */
+.pricing-header {
+    margin-bottom: 1.5rem;
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+    margin: 0.5rem 0 0;
+    line-height: 1.1;
+}
+
+.pricing-period {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64748B;
+    letter-spacing: normal;
+}
+
+/* Features List */
+.pricing-features {
+    margin: 0 0 2rem;
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.875rem;
+    color: #334155;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.pricing-features li i {
+    color: var(--primary);
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+/* Buttons */
+.btn-pricing {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn-pricing-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.btn-pricing-primary:hover {
+    background: #4338CA;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
+}
+
+.btn-pricing-accent {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-pricing-accent:hover {
+    background: #6D28D9;
+    transform: translateY(-2px);
+}
+
+.btn-pricing-outline {
+    background: transparent;
+    border: 1px solid var(--slate-200);
+    color: var(--dark);
+}
+
+.btn-pricing-outline:hover {
+    border-color: var(--dark);
+    background: #F8FAFC;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   NEW PAGES: LEGAL & CONTACT
+   ========================================= */
+
+/* Legal Sidebar (Privacy/Terms) */
+.legal-nav {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.legal-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #64748B;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.legal-nav-link:hover {
+    color: var(--dark);
+    background-color: #F1F5F9;
+    border-left-color: #CBD5E1;
+    border-radius: 0 6px 6px 0;
+}
+
+.legal-nav-link.active {
+    color: var(--primary);
+    background-color: #EEF2FF;
+    border-left-color: var(--primary);
+    border-radius: 0 6px 6px 0;
+}
+
+/* Legal Content Typography */
+.legal-content {
+    color: #334155;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.legal-content h2 {
+    color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+}
+
+.legal-content p {
+    margin-bottom: 1.5rem;
+}
+
+.legal-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Form Styles */
+.contact-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: #F8FAFC;
+    border: 1px solid var(--slate-200);
+    border-radius: 0.75rem;
+    color: var(--dark);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.contact-input:focus {
+    background: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.5rem;
+}
